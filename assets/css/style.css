@@ -1,0 +1,108 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap");
+
+html {
+  font-family: "Manrope", sans-serif;
+  font-size: 28px;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: hsl(218, 23%, 16%);
+  padding: 15px;
+}
+
+main {
+  position: relative;
+}
+
+.card {
+  background-color: hsl(217, 19%, 24%);
+  max-width: 540px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 45px;
+  padding-bottom: 70px;
+  position: relative;
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  transition: opacity 0.5s;
+  opacity: 0;
+}
+.card h2 {
+  color: hsl(150, 100%, 66%);
+  text-transform: uppercase;
+  font-size: 15px;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+}
+.card p {
+  color: hsl(193, 38%, 86%);
+  line-height: 1.4;
+  margin-bottom: 35px;
+}
+.card button {
+  background-color: hsl(150, 100%, 66%);
+  border: none;
+  padding: 20px;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%) translateY(50%);
+  cursor: pointer;
+  transition: box-shadow 0.3s, bottom 0.3s;
+}
+.card button:hover,
+.card button:focus {
+  box-shadow: 0 0 30px hsl(150deg 100% 66%);
+}
+.card button:active {
+  bottom: -5px;
+}
+
+.loader-container {
+  background-color: #1f2632;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.loader {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  border: 5px solid #384458;
+  border-top-color: #1f2632;
+  animation: spin 1.5s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    padding-bottom: 40px;
+  }
+  .card h2 {
+    font-size: 11px;
+  }
+  .card p {
+    font-size: 24px;
+  }
+}
